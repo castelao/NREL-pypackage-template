@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: "A template for Python packages with best practices recommendations"
+message: If you use this software, please cite it using these metadata.
+authors:
+  - given-names: Guilherme
+    family-names: Castelao
+    affiliation: National Renewable Energy Laboratory
+    orcid: https://orcid.org/0000-0002-6765-0708
+  - family-names: Pinchuk
+    given-names: Pavlo
+    affiliation: National Renewable Energy Laboratory
+    orcid: "https://orcid.org/0000-0003-4736-4728"
+version: 0.1.0
+doi: (will create one if we ever go public)
+date-released: 2024-06-02
+repository-code: https://github.nrel.gov/Data-Engineering-SEAC/python-package/commits/main
+license: BSD-3 Clause
+references:
+  - title: "Citation File Format"
+    type: article
+    doi: 10.5281/zenodo.5171937
+    description: The versioned DOI for the version 1.2.0 of the Citation File Format.
+  - title: "How to fine tune the DOI record on Zenodo"
+    type: generic
+    doi: 10.5281/zenodo.3981501
+  - title: "numpy"
+    type: article
+    doi: 10.1038/s41586-020-2649-2
+  - title: "pandas"
+    type: software
+    version: 1.3.3
+    doi: 10.5281/zenodo.5501881
+  - title: "xarray"
+    type: software
+    version: 0.19.0
+    doi: 10.5281/zenodo.5130718
+  - title: "loky"
+    type: software
+    version: 3.0.0
+    doi: 10.5281/zenodo.5770407
