@@ -1,0 +1,174 @@
+[build-system]
+requires = [
+  "setuptools >= 61",
+  "setuptools_scm[toml] >= 8",
+]
+build-backend = 'setuptools.build_meta'
+
+[project]
+name="mypackage"
+dynamic = ["version"]
+description = "A template for Python packages with several best practices recommendations"
+readme = "README.md"
+authors = [
+  {name = "Guilherme Castelão", email = "gpimenta@nrel.gov"},
+  {name = "Paul Pinchuk", email = "ppinchuk@nrel.gov"},
+]
+maintainers = [
+  {name = "Guilherme Castelão", email = "gpimenta@nrel.gov"},
+  {name = "Paul Pinchuk", email = "ppinchuk@nrel.gov"},
+]
+license = {text = "BSD-3-Clause"}
+keywords = ["NREL", "best practives"]
+requires-python = ">= 3.10"
+classifiers=[
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: BSD License",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+dependencies = [
+  "typer>=0.12"
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=0.6.0",
+  "ruff>=0.4.0",
+]
+doc = [
+  "make>=0.1",
+  "ghp-import>=2.1",
+  "numpydoc>=1.6",
+  "pandoc>=2.3",
+  "sphinx>=7.2",
+  "sphinx-click>=5.1",
+  "sphinx-tabs>=3.4",
+  "sphinx-copybutton>=0.5",
+  "pydata-sphinx-theme>=0.15",
+]
+test = [
+  "pytest>=8.0.0",
+  "pytest-cov>=5.0.0",
+  "pytest-xdist>=3.5.0",
+]
+
+[project.urls]
+homepage = "https://github.nrel.gov/gpimenta/python-package"
+documentation = "https://github.nrel.gov/gpimenta/python-package"
+repository = "https://github.nrel.gov/gpimenta/python-package"
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint]
+preview = true
+select = [
+  "A", # flake8-builtins
+  "ARG", # flake8-unused-arguments
+  "B", # flake8-bugbear
+  "BLE", # flake8-blind-except
+  "C", # Pylint: Convention
+  "C4", # flake8-comprehensions
+  "C90", # mccabe
+  "COM", # flake8-commas
+  "D", # pydocstyle
+  "E", # pydoctstyle, Error
+  "EM", # flake8-errmsg
+  "F", # Pyflakes
+  "FURB", # refurb
+  "FLY", #  flynt
+  "G", # flake8-logging-format
+  "I", # isort
+  "INP", # flake8-no-pep420
+  "ISC", # flake8-implicit-str-concat
+  "LOG", # flake8-logging
+  "N", # pep8-naming
+  "NPY", # numpy-specific
+  "PD", # pandas-vet
+  "PERF", # Perflint
+  "PIE", # flake8-pie
+  "PL", # Pylint
+  "PTH", # flake8-use-pathlib
+  "PYI", # flake8-pyi
+  "Q", # flake8-quotes
+  "RET", # flake8-return
+  "RSE", # flake8-raise
+  "RUF", # Ruff-specific rules
+  "S", # flake8-bandit
+  "SLF", # flake8-self
+  "SIM", # flake8-simplify
+  "TID", # flake8-tidy-imports (absolute imports)
+  "TRY", # tryceratops
+  "UP", # pyupgrade
+  "W" # Warning
+]
+ignore = [
+  "D400", # first-line-should-end-with-a-period
+  "COM812" # missing-trailing-comma (incompatible with formatter)
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.lint.pylint]
+ max-args = 10
+ max-positional-args = 10
+
+[tool.setuptools]
+packages = ["mypackage"]
+
+[tool.setuptools_scm]
+version_file = "mypackage/_version.py"
+
+[tool.pixi.project]
+channels = ["conda-forge", "anaconda", "main"]
+platforms = ["osx-arm64", "linux-64", "win-64"]
+
+[tool.pixi.pypi-dependencies]
+mypackage = { path = ".", editable = true }
+
+[tool.pixi.environments]
+default = { solve-group = "default" }
+dev = { features = ["dev"], solve-group = "default" }
+doc = { features = ["doc"], solve-group = "default" }
+test = { features = ["test"], solve-group = "default" }
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+python = ">=3.11.8,<3.12"
+matplotlib = ">=3.9.2,<4"
+numpy = ">=2.1.2,<3"
+pandas = ">=2.2.3,<3"
+xarray = ">=2024.10.0,<2025"
+
+[tool.pixi.feature.dev.dependencies]
+build = ">=0.10.0,<0.11"
+ipython = ">=8.28.0,<9"
+ruff = ">=0.7.1,<0.8"
+twine = ">=5.1.1,<6"
+
+[tool.pixi.feature.test.dependencies]
+pytest = ">=8.2,<9"
+pytest-cov = ">=3.0"
+pytest-xdist = ">=3.0"
+tox = ">=4.21.2,<5"
+
+[tool.pixi.feature.doc.dependencies]
+sphinx = ">=7.0"
+sphinx_rtd_theme = ">=2.0"

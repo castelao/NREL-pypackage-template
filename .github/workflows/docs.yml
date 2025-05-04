@@ -1,0 +1,40 @@
+name: Release Documentation
+
+permissions: write-all
+
+on:
+  release:
+    types: [created, published]
+
+jobs:
+  build_docs:
+    name: Build docs
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+
+    steps:
+      - name: Install LaTeX
+        run: "sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip' # caching pip dependencies
+      - name: Install
+        run: python3 -m pip install '.[doc]'
+
+      - name: Build document
+        run: |
+          cd docs
+          make latexpdf
+
+      - name: Release
+        uses: fnkr/github-action-ghr@v1
+        env:
+          GHR_PATH: docs/_build/latex/MyPackage.pdf
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
