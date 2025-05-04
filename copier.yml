@@ -1,8 +1,59 @@
 # questions
 project_name:
     type: str
-    help: What is your project name?
-
+    help: What is your project name (My Python package)?
+project_slug:
+    type: str
+    placeholder: "my_python_package"
+    help: What is your project slug (my_python_package)?
 module_name:
     type: str
     help: What is your Python module name?
+package_short_description:
+    type: str
+    placeholder: "A short description of your package"
+    help: What is your package short description?
+full_name:
+    type: str
+    placeholder: "Your full name"
+    help: What is your full name?
+email:
+    type: str
+    placeholder: "Your email address"
+    help: What is your email address?
+github_username:
+    type: str
+    placeholder: "Your GitHub username"
+    help: What is your GitHub username?
+version:
+    type: str
+    default: "0.1.0"
+    help: What is your package version?
+use_pytest:
+    type: bool
+    default: true
+    help: Do you want to use pytest for testing?
+select_command_line_interface:
+    type: select
+    default: "Click"
+    choices:
+        - Click
+        - Typer
+        - Argparse
+        - No command-line interface
+    help: Which command line interface do you want to use?
+create_author_file:
+    type: bool
+    default: true
+    help: Do you want to create an author file?
+select_license:
+    type: select
+    default: "MIT"
+    choices:
+        - MIT
+        - Apache-2.0
+        - BSD-3-Clause
+        - GPL-3.0
+        - Apache-2.0 or MIT
+        - No license
+    help: Which license do you want to use?
