@@ -6,7 +6,7 @@ requires = [
 build-backend = 'setuptools.build_meta'
 
 [project]
-name="mypackage"
+name="{{ project_slug }}"
 dynamic = ["version"]
 description = "A template for Python packages with several best practices recommendations"
 readme = "README.md"
@@ -130,17 +130,17 @@ convention = "numpy"
  max-positional-args = 10
 
 [tool.setuptools]
-packages = ["mypackage"]
+packages = ["{{ project_slug }}"]
 
 [tool.setuptools_scm]
-version_file = "mypackage/_version.py"
+version_file = "{{ project_slug }}/_version.py"
 
 [tool.pixi.project]
 channels = ["conda-forge", "anaconda", "main"]
 platforms = ["osx-arm64", "linux-64", "win-64"]
 
 [tool.pixi.pypi-dependencies]
-mypackage = { path = ".", editable = true }
+{{ project_slug }} = { path = ".", editable = true }
 
 [tool.pixi.environments]
 default = { solve-group = "default" }
