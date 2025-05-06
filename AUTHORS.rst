@@ -10,10 +10,9 @@ directorate at the `National Renewable Energy Laboratory (NREL)`.
 Development Lead
 ----------------
 
-* Guilherme Castelão <gpimenta@nrel.gov>
-* Pavlo Pinchuk <pavlo.pinchuk@nrel.gov>
+* {{ full_name }} <{{ email }}>
 
 Contributors
 ------------
 
-* Meghan Mooney <meghan.mooney@nrel.gov>
+* 
