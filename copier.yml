@@ -6,9 +6,6 @@ project_slug:
     type: str
     placeholder: "my_python_package"
     help: What is your project slug (my_python_package)?
-module_name:
-    type: str
-    help: What is your Python module name?
 package_short_description:
     type: str
     placeholder: "A short description of your package"
@@ -33,8 +30,8 @@ use_pytest:
     type: bool
     default: true
     help: Do you want to use pytest for testing?
-select_command_line_interface:
-    type: select
+command_line_interface:
+    type: str
     default: "Click"
     choices:
         - Click
@@ -47,7 +44,7 @@ create_author_file:
     default: true
     help: Do you want to create an author file?
 select_license:
-    type: select
+    type: str
     default: "MIT"
     choices:
         - MIT
