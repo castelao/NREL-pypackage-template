@@ -54,9 +54,9 @@ create_author_file:
     type: bool
     default: true
     help: Do you want to create an author file?
-select_license:
+project_license:
     type: str
-    default: "MIT"
+    default: "BSD-3-Clause"
     choices:
         - MIT
         - Apache-2.0
