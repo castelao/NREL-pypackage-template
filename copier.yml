@@ -1,7 +1,8 @@
 # questions
 project_name:
     type: str
-    help: What is your project name (My Python package)?
+    placeholder: "NREL-Python-package"
+    help: What is your project name?
 project_slug:
     type: str
     default: "{{ project_name | lower | replace(' ', '-') | regex_replace('[-]+', '_') }}"
