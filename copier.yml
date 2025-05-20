@@ -30,6 +30,17 @@ use_pytest:
     type: bool
     default: true
     help: Do you want to use pytest for testing?
+requires_python:
+    type: str
+    choices:
+        - "3.8"
+        - "3.9"
+        - "3.10"
+        - "3.11"
+        - "3.12"
+        - "3.13"
+    default: "3.11"
+    help: What is the minimum Python version required?
 command_line_interface:
     type: str
     default: "Click"
