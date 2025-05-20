@@ -16,3 +16,8 @@ Contributors
 ------------
 
 * 
+
+Acknowledgements
+----------------
+
+* This package was based on the template https://github.com/castelao/NREL-pypackage-template
