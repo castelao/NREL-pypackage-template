@@ -4,8 +4,12 @@ project_name:
     help: What is your project name (My Python package)?
 project_slug:
     type: str
-    placeholder: "my_python_package"
-    help: What is your project slug (my_python_package)?
+    default: "{{ project_name | lower | replace(' ', '-') | regex_replace('[-]+', '_') }}"
+    help: What is your project slug?
+    # validator: >-
+    #     {% if not (project_name | regex_search('^[a-z][a-z0-9\-]+$')) %}
+    #     project_name must start with a letter, followed one or more letters, digits or dashes all lowercase.
+    #     {% endif %}
 package_short_description:
     type: str
     placeholder: "A short description of your package"
