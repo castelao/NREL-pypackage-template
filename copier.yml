@@ -1,4 +1,11 @@
 # questions
+_exclude:
+    - README.md
+#_subdirectory: template
+project_title:
+    type: str
+    placeholder: "NREL's Python Package"
+    help: What is your project title?
 project_name:
     type: str
     placeholder: "NREL-Python-package"
