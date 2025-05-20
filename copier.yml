@@ -65,3 +65,7 @@ project_license:
         - Apache-2.0 or MIT
         - No license
     help: Which license do you want to use?
+use_pre_commit:
+    type: bool
+    default: true
+    help: Do you want to use pre-commit for code formatting and linting?
