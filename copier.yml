@@ -10,7 +10,7 @@ package_short_description:
     type: str
     placeholder: "A short description of your package"
     help: What is your package short description?
-full_name:
+author_name:
     type: str
     placeholder: "Your full name"
     help: What is your full name?
