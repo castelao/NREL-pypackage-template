@@ -1,0 +1,72 @@
+{
+  "creators": [
+    {
+      "name": "Castelao, Guilherme",
+      "affiliation": "National Renewable Energy Laboratory",
+      "orcid": "0000-0002-6765-0708"
+    },
+    {
+      "name": "Pinchuk, Pavlo",
+      "affiliation": "National Renewable Energy Laboratory",
+      "orcid": "0000-0003-4736-4728"
+    }
+  ],
+  "license": "BSD license",
+  "contributors": [
+    {
+      "type": "Sponsor",
+      "name": "National Renewable Energy Laboratory"
+    }
+  ],
+  "related_identifiers": [
+        {
+            "scheme": "doi",
+            "identifier": "10.5281/zenodo.5171937",
+            "relation": "cites"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.5281/zenodo.3981501",
+            "relation": "cites"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.1038/s41586-020-2649-2",
+            "relation": "cites",
+            "resource_type": {
+                "type": "publication",
+                "subtype": "article"
+            }
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.5281/zenodo.5501881",
+            "relation": "cites",
+            "resource_type": "software"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.5281/zenodo.5130718",
+            "relation": "cites",
+            "resource_type": "software"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.5281/zenodo.5770407",
+            "relation": "cites",
+            "resource_type": "software"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.21238/S8SPRAY1618",
+            "relation": "cites",
+            "resource_type": "dataset"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.5067/NPP/VIIRS/L2/OC/2018",
+            "relation": "cites",
+            "resource_type": "dataset"
+        }
+    ]
+}
