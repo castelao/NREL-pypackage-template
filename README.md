@@ -16,5 +16,11 @@
   ```
 - Now you're ready to create a brand new Python package.
   ```bash
-  pixi run copier https://github.com/castelao/NREL-pypackage-template ~/work/projects/<your-package-name>
+  pixi run copier https://github.com/castelao/NREL-pypackage-template ~/projects/<your-package-name>
+  ```
+
+- Add your dependencies. Let's assume you depend on `xarray`:
+  ```bash
+  cd ~/projects
+  pixi add xarray
   ```
