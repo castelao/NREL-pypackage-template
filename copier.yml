@@ -1,7 +1,7 @@
 # questions
 _exclude:
     - README.md
-#_subdirectory: template
+_subdirectory: template
 project_title:
     type: str
     placeholder: "NREL's Python Package"
