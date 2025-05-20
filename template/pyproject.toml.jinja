@@ -6,21 +6,19 @@ requires = [
 build-backend = 'setuptools.build_meta'
 
 [project]
-name="mypackage"
+name="{{ project_slug }}"
 dynamic = ["version"]
-description = "A template for Python packages with several best practices recommendations"
+description = "{{ package_short_description }}"
 readme = "README.md"
 authors = [
-  {name = "Guilherme Castelão", email = "gpimenta@nrel.gov"},
-  {name = "Paul Pinchuk", email = "ppinchuk@nrel.gov"},
+  {name = "{{ author_name }}", email = "{{ email }}"},
 ]
 maintainers = [
-  {name = "Guilherme Castelão", email = "gpimenta@nrel.gov"},
-  {name = "Paul Pinchuk", email = "ppinchuk@nrel.gov"},
+  {name = "{{ author_name }}", email = "{{ email }}"},
 ]
-license = {text = "BSD-3-Clause"}
-keywords = ["NREL", "best practives"]
-requires-python = ">= 3.10"
+license = {text = "{{ project_license }}"}
+keywords = ["NREL", "best practices"]
+requires-python = ">= {{ requires_python }}"
 classifiers=[
   "Development Status :: 2 - Pre-Alpha",
   "Intended Audience :: Science/Research",
@@ -28,19 +26,22 @@ classifiers=[
   "Natural Language :: English",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Topic :: Software Development :: Libraries :: Application Frameworks",
 ]
 dependencies = [
+  {% if command_line_interface == "click" %}
+  "click>=8.0.0",
+  {% endif %}
+  {% if command_line_interface == "typer" %}
   "typer>=0.12"
+  {% endif %}
 ]
 
 [project.optional-dependencies]
 dev = [
-  "build>=0.6.0",
   "ruff>=0.4.0",
 ]
 doc = [
@@ -130,17 +131,17 @@ convention = "numpy"
  max-positional-args = 10
 
 [tool.setuptools]
-packages = ["mypackage"]
+packages = ["{{ project_slug }}"]
 
 [tool.setuptools_scm]
-version_file = "mypackage/_version.py"
+version_file = "{{ project_slug }}/_version.py"
 
 [tool.pixi.project]
 channels = ["conda-forge", "anaconda", "main"]
 platforms = ["osx-arm64", "linux-64", "win-64"]
 
 [tool.pixi.pypi-dependencies]
-mypackage = { path = ".", editable = true }
+{{ project_slug }} = { path = ".", editable = true }
 
 [tool.pixi.environments]
 default = { solve-group = "default" }
@@ -158,10 +159,10 @@ pandas = ">=2.2.3,<3"
 xarray = ">=2024.10.0,<2025"
 
 [tool.pixi.feature.dev.dependencies]
-build = ">=0.10.0,<0.11"
 ipython = ">=8.28.0,<9"
 ruff = ">=0.7.1,<0.8"
 twine = ">=5.1.1,<6"
+uv = ">=0.7.4,<0.8"
 
 [tool.pixi.feature.test.dependencies]
 pytest = ">=8.2,<9"

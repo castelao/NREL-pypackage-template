@@ -1,8 +1,83 @@
 # questions
+_exclude:
+    - README.md
+_subdirectory: template
+project_title:
+    type: str
+    placeholder: "NREL's Python Package"
+    help: What is your project title?
 project_name:
     type: str
+    placeholder: "NREL-Python-package"
     help: What is your project name?
-
-module_name:
+project_slug:
     type: str
-    help: What is your Python module name?
+    default: "{{ project_name | lower | replace(' ', '-') | regex_replace('[-]+', '_') }}"
+    help: What is your project slug?
+    # validator: >-
+    #     {% if not (project_name | regex_search('^[a-z][a-z0-9\-]+$')) %}
+    #     project_name must start with a letter, followed one or more letters, digits or dashes all lowercase.
+    #     {% endif %}
+package_short_description:
+    type: str
+    placeholder: "A short description of your package"
+    help: What is your package short description?
+author_name:
+    type: str
+    placeholder: "Your full name"
+    help: What is your full name?
+email:
+    type: str
+    placeholder: "Your email address"
+    help: What is your email address?
+github_username:
+    type: str
+    placeholder: "Your GitHub username"
+    help: What is your GitHub username?
+version:
+    type: str
+    default: "0.1.0"
+    help: What is your package version?
+use_pytest:
+    type: bool
+    default: true
+    help: Do you want to use pytest for testing?
+requires_python:
+    type: str
+    choices:
+        - "3.8"
+        - "3.9"
+        - "3.10"
+        - "3.11"
+        - "3.12"
+        - "3.13"
+    default: "3.11"
+    help: What is the minimum Python version required?
+command_line_interface:
+    type: str
+    default: "Click"
+    choices:
+        - Click
+        - Typer
+        - Argparse
+        - No command-line interface
+    help: Which command line interface do you want to use?
+create_author_file:
+    type: bool
+    default: true
+    help: Do you want to create an author file?
+project_license:
+    type: str
+    default: "BSD-3-Clause"
+    choices:
+        - MIT
+        - Apache-2.0
+        - BSD-3-Clause
+        - GPL-3.0
+        - Apache-2.0 or MIT
+        - No license
+    help: Which license do you want to use?
+use_pre_commit:
+    type: bool
+    default: true
+    help: Do you want to use pre-commit for code formatting and linting?
