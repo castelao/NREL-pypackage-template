@@ -1,0 +1,16 @@
+[project]
+authors = [
+  "Gui Castelao <guilherme@castelao.net>",
+  "Paul Pinchuk <ppinchuk@nrel.gov>",
+	"Luiz Irber <luiz.irber@gmail.com>"
+	]
+channels = ["conda-forge"]
+description = "Template for a standard Python Package"
+name = "NREL-python-template"
+platforms = ["osx-arm64", "linux-64", "win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+copier = ">=9.7.1,<10"
