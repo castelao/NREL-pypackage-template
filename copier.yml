@@ -13,7 +13,7 @@ project_name:
 project_slug:
     type: str
     default: "{{ project_name | lower | replace(' ', '-') | regex_replace('[-]+', '_') }}"
-    help: What is your project slug?
+    help: What is your project slug, i.e. how it will be imported inside Python? (import xxxx)
     # validator: >-
     #     {% if not (project_name | regex_search('^[a-z][a-z0-9\-]+$')) %}
     #     project_name must start with a letter, followed one or more letters, digits or dashes all lowercase.
