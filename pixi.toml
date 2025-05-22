@@ -2,8 +2,8 @@
 authors = [
   "Gui Castelao <guilherme@castelao.net>",
   "Paul Pinchuk <ppinchuk@nrel.gov>",
-	"Luiz Irber <luiz.irber@gmail.com>"
-	]
+  "Luiz Irber <luiz.irber@gmail.com>"
+  ]
 channels = ["conda-forge"]
 description = "Template for a standard Python Package"
 name = "NREL-python-template"
