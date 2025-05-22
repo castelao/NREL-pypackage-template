@@ -30,10 +30,10 @@ email:
     type: str
     placeholder: "Your email address"
     help: What is your email address?
-github_username:
+repository:
     type: str
-    placeholder: "Your GitHub username"
-    help: What is your GitHub username?
+    placeholder: "https://gihub.com/NREL/{{ project_slug }}"
+    help: What is the repository URL?
 version:
     type: str
     default: "0.1.0"
