@@ -5,7 +5,7 @@ _subdirectory: template
 project_title:
     type: str
     placeholder: "NREL's Python Package"
-    help: What is your project title?
+    help: What is your project title (used in the documentation)?
 project_name:
     type: str
     placeholder: "NREL-Python-package"
@@ -13,7 +13,7 @@ project_name:
 project_slug:
     type: str
     default: "{{ project_name | lower | replace(' ', '-') | regex_replace('[-]+', '_') }}"
-    help: What is your project slug?
+    help: What is your project slug, i.e. how it will be imported inside Python? (import xxxx)
     # validator: >-
     #     {% if not (project_name | regex_search('^[a-z][a-z0-9\-]+$')) %}
     #     project_name must start with a letter, followed one or more letters, digits or dashes all lowercase.
@@ -30,10 +30,10 @@ email:
     type: str
     placeholder: "Your email address"
     help: What is your email address?
-github_username:
+repository:
     type: str
-    placeholder: "Your GitHub username"
-    help: What is your GitHub username?
+    placeholder: "https://gihub.com/NREL/{{ project_slug }}"
+    help: What is the repository URL?
 version:
     type: str
     default: "0.1.0"
