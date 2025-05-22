@@ -42,7 +42,10 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-  "ruff>=0.4.0",
+  "ipython>=8.29",
+  {% if use_pre_commit %}"pre-commit>=4.0",{% endif %}
+  "ruff>=0.7",
+  "uv>=0.7",
 ]
 doc = [
   "make>=0.1",
@@ -160,9 +163,10 @@ xarray = ">=2024.10.0,<2025"
 
 [tool.pixi.feature.dev.dependencies]
 ipython = ">=8.28.0,<9"
+{% if use_pre_commit %}pre-commit = ">=4.0.1,<5"{% endif %}
 ruff = ">=0.7.1,<0.8"
 twine = ">=5.1.1,<6"
-uv = ">=0.7.4,<0.8"
+uv = ">=0.7.6,<0.8"
 
 [tool.pixi.feature.test.dependencies]
 pytest = ">=8.2,<9"
