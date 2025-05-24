@@ -1,27 +1,26 @@
-# NREL's template for Python packages
+# Template for NREL's Python packages
+
+This is an opinionated template for creating Python packages at NREL.
 
 ## Quickstart
 
-- Install [pixi](https://pixi.sh/latest/#installation)
-- Create an environment with pixi to initiate new packages.
-  For instance, I use
+- If you don't already have it, install [pixi](https://pixi.sh/latest/#installation)
+- Clone this repository
   ```bash
-  mkdir -p ~/work/projects/control-center
-  cd ~/work/projects/control-center
-  pixi init -c conda-forge -v .
+  git clone https://github.com/castelao/NREL-pypackage-template.git
+  cd NREL-pypackage-template
   ```
-- Install copier
-  ```bash
-  pixi add copier
-  ```
-- Now you're ready to create a brand new Python package.
+- Create your new project by running
   ```bash
   pixi run copier copy https://github.com/castelao/NREL-pypackage-template ../my_new_project
   cd ../my_new_project
   ```
-
-- Add your dependencies. Let's assume you depend on `xarray`:
+  You should see several files and directories created from the information
+  that you gave. For instance, take a look at the `pyproject.toml` file.
+- Your package will probably depend on other libraries. Let's assume that
+  you'll use `xarray`, so you can run
   ```bash
-  cd ~/projects
   pixi add xarray
   ```
+  Which will update the `pyproject.toml` and `pixi.lock` files with the new
+  dependency.
