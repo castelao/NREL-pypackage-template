@@ -32,7 +32,7 @@ email:
     help: What is your email address?
 repository:
     type: str
-    placeholder: "https://gihub.com/NREL/{{ project_slug }}"
+    placeholder: "https://github.com/NREL/{{ project_slug }}"
     help: What is the repository URL?
 version:
     type: str
