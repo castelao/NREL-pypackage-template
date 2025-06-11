@@ -1,5 +1,5 @@
 name: Feature Request
-description: Request a new {{ project_slug }} feature
+description: Request a new {{ project_name }} feature
 type: Feature
 
 body:
@@ -10,11 +10,11 @@ body:
       description: Please check what type of feature request you would like to propose.
       options:
         - label: >
-            Adding new functionality to {{ project_slug }}
+            Adding new functionality to {{ project_name }}
         - label: >
-            Changing existing functionality in {{ project_slug }}
+            Changing existing functionality in {{ project_name }}
         - label: >
-            Removing existing functionality in {{ project_slug }}
+            Removing existing functionality in {{ project_name }}
   - type: textarea
     id: description
     attributes:
@@ -23,7 +23,7 @@ body:
         Is your feature request related to a problem? Please describe.
       placeholder: |
         I'm always frustrated when [...]
-        I wish I could use {{ project_slug }} to [...]
+        I wish I could use {{ project_name }} to [...]
 
     validations:
       required: true

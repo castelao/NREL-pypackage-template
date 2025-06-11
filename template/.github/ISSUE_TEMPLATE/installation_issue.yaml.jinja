@@ -1,5 +1,5 @@
 name: Installation Issue
-description: Report issues installing {{ project_slug }} on your system
+description: Report issues installing {{ project_name }} on your system
 
 body:
   - type: checkboxes
@@ -23,7 +23,7 @@ body:
     attributes:
       label: Installation Method
       description: >
-        Please provide how you tried to install {{ project_slug }} from a clean environment.
+        Please provide how you tried to install {{ project_name }} from a clean environment.
       options:
         - pip install (from PyPi)
         - pip install . (from source)
@@ -34,9 +34,9 @@ body:
   - type: input
     id: version
     attributes:
-      label: {{ project_slug }} Version
+      label: {{ project_name }} Version
       description: >
-        Please provide the version of {{ project_slug }} you are trying to install.
+        Please provide the version of {{ project_name }} you are trying to install.
     validations:
       required: true
   - type: input
@@ -52,6 +52,6 @@ body:
     attributes:
       label: Installation Logs
       description: >
-        If possible, please copy and paste the installation logs when attempting to install {{ project_slug }}.
+        If possible, please copy and paste the installation logs when attempting to install {{ project_name }}.
       value: >
         Replace this line with the installation logs
