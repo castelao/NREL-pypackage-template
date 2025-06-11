@@ -1,8 +1,12 @@
 categories:
+  - title: 'Breaking Changes'
+    labels:
+      - 'breaking'
   - title: 'Features'
     labels:
       - 'feature'
       - 'enhancement'
+      - 'new computation'
   - title: 'Bug Fixes'
     labels:
       - 'fix'
@@ -12,7 +16,13 @@ categories:
     labels:
       - 'refactor'
       - 'documentation'
+  - title: 'Chores'
+    labels:
+      - 'dependencies'
+      - 'chore'
+      - 'github_actions'
+
 template: |
-  ## What's Changed
+  # What's Changed
 
   $CHANGES

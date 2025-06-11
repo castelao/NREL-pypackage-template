@@ -1,0 +1,90 @@
+name: Python checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint Python Code Base with Ruff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/ruff-action@v3
+        with:
+          version: "latest"
+          args: "check"
+          src: "./{{ project_slug }}"
+      - uses: astral-sh/ruff-action@v3
+        with:
+          version: "latest"
+          args: "format --check"
+          src: "./{{ project_slug }}"
+
+  pixi-tests:
+    needs: lint
+    name: Python Tests (Pixi)
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - uses: prefix-dev/setup-pixi@v0.8.8
+      with:
+        pixi-version: v0.48.0
+        locked: true
+        cache: true
+
+    - run: pixi run tests
+
+  tox-tests:
+    needs: lint
+    name: Python tests (Tox)
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['{{ requires_python }}']
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python {% raw %}${{ matrix.python-version }}{% endraw %}
+      uses: actions/setup-python@v5
+      with:
+        python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
+        cache: 'pip'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install tox tox-gh-actions>=2.0
+
+    - name: tox cache
+      uses: actions/cache@v4
+      with:
+        path: .tox/
+        key: {% raw %}${{ runner.os }}-${{ matrix.python-version }}-tox-v1-${{ hashFiles('**/pyproject.toml') }}{% endraw %}
+        restore-keys: |
+          {% raw %}${{ runner.os }}-${{ matrix.python-version }}-tox-v1-{% endraw %}
+
+    - name: Test with tox
+      run: tox -e {% raw %}${{{% endraw %} matrix.python-version == '{{ requires_python }}' && 'msv' || 'latest' {% raw %}}}{% endraw %}
+      env:
+        PYTHONDEVMODE: 1

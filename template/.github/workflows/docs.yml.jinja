@@ -23,7 +23,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '{{ requires_python }}'
           cache: 'pip' # caching pip dependencies
       - name: Install
         run: python3 -m pip install '.[doc]'
