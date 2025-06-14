@@ -45,7 +45,6 @@ use_pytest:
 requires_python:
     type: str
     choices:
-        - "3.8"
         - "3.9"
         - "3.10"
         - "3.11"
