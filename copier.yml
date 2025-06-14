@@ -22,10 +22,14 @@ package_short_description:
     type: str
     placeholder: "A short description of your package"
     help: What is your package short description?
-author_name:
+author_first_name:
     type: str
-    placeholder: "Your full name"
-    help: What is your full name?
+    placeholder: "Guilherme"
+    help: What is your first name?
+author_family_name:
+    type: str
+    placeholder: "Castelão"
+    help: What is your family name?
 email:
     type: str
     placeholder: "Your email address"
