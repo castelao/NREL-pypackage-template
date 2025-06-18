@@ -69,10 +69,6 @@ command_line_interface:
         - Argparse
         - No command-line interface
     help: Which command line interface do you want to use?
-#create_author_file:
-#    type: bool
-#    default: true
-#    help: Do you want to create an author file?
 project_license:
     type: str
     default: "BSD-3-Clause"
