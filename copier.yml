@@ -40,7 +40,7 @@ orcid:
     help: What is your ORCID? (optional)
 repository:
     type: str
-    placeholder: "https://github.com/NREL/{{ project_slug }}"
+    default: "https://github.com/NREL/{{ project_slug }}"
     help: What is the repository URL?
 version:
     type: str
