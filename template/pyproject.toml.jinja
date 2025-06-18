@@ -148,11 +148,11 @@ platforms = ["osx-arm64", "linux-64", "win-64"]
 
 [tool.pixi.environments]
 default = { solve-group = "default" }
-dev = { features = ["dev"], solve-group = "default" }
+dev = { features = ["dev", "doc", "test"], solve-group = "default" }
 doc = { features = ["doc"], solve-group = "default" }
 test = { features = ["test"], solve-group = "default" }
 
-[tool.pixi.tasks]
+[tool.pixi.feature.dev.tasks]
 tests = "pytest --durations=20 tests"
 
 [tool.pixi.dependencies]
