@@ -25,7 +25,7 @@ package_short_description:
 author_first_name:
     type: str
     placeholder: "Guilherme"
-    help: What is your first name?
+    help: What is the author's given name?
 author_family_name:
     type: str
     placeholder: "Castelão"
