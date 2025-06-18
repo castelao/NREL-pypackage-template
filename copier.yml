@@ -32,7 +32,7 @@ author_family_name:
     help: What is your family name?
 email:
     type: str
-    placeholder: "Your email address"
+    placeholder: "gpimenta@nrel.gov"
     help: What is your email address?
 repository:
     type: str
