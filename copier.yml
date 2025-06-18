@@ -34,6 +34,10 @@ email:
     type: str
     placeholder: "gpimenta@nrel.gov"
     help: What is your email address?
+orcid:
+    type: str
+    placeholder: "https://orcid.org/0000-0000-0000-0000"
+    help: What is your ORCID? (optional)
 repository:
     type: str
     placeholder: "https://github.com/NREL/{{ project_slug }}"
