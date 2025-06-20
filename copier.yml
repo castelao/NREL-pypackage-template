@@ -36,7 +36,7 @@ email:
     help: What is your email address?
 orcid:
     type: str
-    placeholder: "0000-0000-0000-0000"
+    placeholder: "0000-0002-6765-0708"
     help: What is your ORCID? (optional)
 repository:
     type: str
