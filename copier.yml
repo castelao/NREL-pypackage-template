@@ -4,16 +4,16 @@ _exclude:
 _subdirectory: template
 project_title:
     type: str
-    placeholder: "NREL's Python Package"
+    placeholder: "NREL's Modern Data Standards"
     help: What is your project title (used in the documentation)?
 project_name:
     type: str
-    placeholder: "NREL-Python-package"
-    help: What is your project name?
+    placeholder: "NREL-Modern-Data"
+    help: What is your project name, as seen on GitHub? Can use hyphens, but don't use spaces or special characters.
 project_slug:
     type: str
     default: "{{ project_name | lower | replace(' ', '-') | regex_replace('[-]+', '_') }}"
-    help: What is your project slug, i.e. how it will be imported inside Python? (import xxxx)
+    help: What is your project slug, i.e. how it will be imported inside Python? (Use only lower-case, and no hyphens, spaces, or special characters)
     # validator: >-
     #     {% if not (project_name | regex_search('^[a-z][a-z0-9\-]+$')) %}
     #     project_name must start with a letter, followed one or more letters, digits or dashes all lowercase.
@@ -22,17 +22,25 @@ package_short_description:
     type: str
     placeholder: "A short description of your package"
     help: What is your package short description?
-author_name:
+author_first_name:
     type: str
-    placeholder: "Your full name"
-    help: What is your full name?
+    placeholder: "Guilherme"
+    help: What is the author's given name?
+author_family_name:
+    type: str
+    placeholder: "Castelão"
+    help: What is your family name?
 email:
     type: str
-    placeholder: "Your email address"
+    placeholder: "gpimenta@nrel.gov"
     help: What is your email address?
+orcid:
+    type: str
+    placeholder: "0000-0002-6765-0708"
+    help: What is your ORCID? (optional)
 repository:
     type: str
-    placeholder: "https://github.com/NREL/{{ project_slug }}"
+    default: "https://github.com/NREL/{{ project_name }}"
     help: What is the repository URL?
 version:
     type: str
@@ -45,13 +53,12 @@ use_pytest:
 requires_python:
     type: str
     choices:
-        - "3.8"
         - "3.9"
         - "3.10"
         - "3.11"
         - "3.12"
         - "3.13"
-    default: "3.11"
+    default: "3.12"
     help: What is the minimum Python version required?
 command_line_interface:
     type: str
@@ -62,10 +69,6 @@ command_line_interface:
         - Argparse
         - No command-line interface
     help: Which command line interface do you want to use?
-create_author_file:
-    type: bool
-    default: true
-    help: Do you want to create an author file?
 project_license:
     type: str
     default: "BSD-3-Clause"

@@ -2,19 +2,15 @@ cff-version: 1.2.0
 title: "{{ project_title }}"
 message: If you use this software, please cite it using these metadata.
 authors:
-  - given-names: Guilherme
-    family-names: Castelao
+  - given-names: {{ author_first_name }}
+    family-names: {{ author_family_name }}
     affiliation: National Renewable Energy Laboratory
-    orcid: https://orcid.org/0000-0002-6765-0708
-  - family-names: Pinchuk
-    given-names: Pavlo
-    affiliation: National Renewable Energy Laboratory
-    orcid: "https://orcid.org/0000-0003-4736-4728"
+    orcid: https://orcid.org/{{ orcid }}
 version: 0.1.0
 doi: (will create one if we ever go public)
 date-released: 2024-06-02
 repository-code: https://github.nrel.gov/Data-Engineering-SEAC/python-package/commits/main
-license: BSD-3 Clause
+license: {{ project_license }}
 references:
   - title: "Citation File Format"
     type: article
@@ -26,15 +22,7 @@ references:
   - title: "numpy"
     type: article
     doi: 10.1038/s41586-020-2649-2
-  - title: "pandas"
-    type: software
-    version: 1.3.3
-    doi: 10.5281/zenodo.5501881
   - title: "xarray"
     type: software
     version: 0.19.0
     doi: 10.5281/zenodo.5130718
-  - title: "loky"
-    type: software
-    version: 3.0.0
-    doi: 10.5281/zenodo.5770407
