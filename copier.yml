@@ -9,7 +9,7 @@ project_title:
 project_name:
     type: str
     placeholder: "NREL-Modern-Data"
-    help: What is your project name? Can use hyphens, but don't use spaces or special characters.
+    help: What is your project name, as seen on GitHub? Can use hyphens, but don't use spaces or special characters.
 project_slug:
     type: str
     default: "{{ project_name | lower | replace(' ', '-') | regex_replace('[-]+', '_') }}"
