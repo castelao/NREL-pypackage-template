@@ -20,7 +20,7 @@ Download from {{ repository }}/releases
 
 ### Installing with Pixi (recommended)
 
-We recommend using `pixi` to manage a Python environment with `{{ project_name }}` and all the required dependencies since it can reproduce exactly what we use for development.
+We recommend using `pixi` to manage a Python environment with `{{ project_slug }}` and all the required dependencies since it can reproduce exactly what we use for development.
 
 1. Install `pixi` itself on your system. You only need to do this once, so you can skip this step if you already have `pixi` installed.
 
@@ -36,7 +36,7 @@ For Windows:
    powershell -ExecutionPolicy ByPass -c "irm -useb https://pixi.sh/install.ps1 | iex"
    ```
 
-2. Clone {{project_name}} repository if you don't already have it.
+2. Clone the {{project_name}} repository if you don't already have it.
 
 3. Pixi provides support to use virtual environment with all the dependencies
    required. To do so, pixi uses the information from `pyproject.toml` and
