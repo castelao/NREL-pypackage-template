@@ -32,11 +32,8 @@ classifiers=[
   "Topic :: Software Development :: Libraries :: Application Frameworks",
 ]
 dependencies = [
-  {% if command_line_interface == "click" %}
-  "click>=8.0.0",
-  {% endif %}
-  {% if command_line_interface == "typer" %}
-  "typer>=0.12"
+  {% if command_line_interface == "Click" %}"click>=8.0.0",
+  {% elif command_line_interface == "Typer" %}"typer>=0.12",
   {% endif %}
 ]
 
