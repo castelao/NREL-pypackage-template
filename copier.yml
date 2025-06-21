@@ -5,7 +5,7 @@ _subdirectory: template
 project_title:
     type: str
     placeholder: "NREL's Modern Data Standards"
-    help: What is your project title? It will be used in places such as documentation and the README landing page.
+    help: What is your project title? This title will be used in places such as documentation and the README landing page. There are no restrictions on characters.
 project_name:
     type: str
     placeholder: "NREL-Modern-Data"
