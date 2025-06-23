@@ -37,4 +37,4 @@ jobs:
         uses: fnkr/github-action-ghr@v1
         env:
           GHR_PATH: docs/_build/latex/MyPackage.pdf
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}

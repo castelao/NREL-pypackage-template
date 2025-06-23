@@ -46,7 +46,7 @@ jobs:
         pixi-version: v0.48.2
         locked: true
         cache: true
-        cache-write: ${{ github.ref == 'refs/heads/main' }}
+        cache-write: {% raw %}${{ github.ref == 'refs/heads/main' }}{% endraw %}
         environments: dev
 
     - run: pixi run --frozen tests
