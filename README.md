@@ -25,19 +25,22 @@ that suits you best:
 
 #### Homebrew (OSX)
 
-If you are on OSX and have [Homebrew](https://brew.sh/) installed, you can install `copier` with the following command:
+If you are on OSX and have [Homebrew](https://brew.sh/), you can install
+`copier` globally with the following command:
 
 ```bash
 brew install copier
 ```
 
-#### Pixi
+#### Pixi (contributors)
 
 If you have [Pixi](https://pixi.sh/latest/) installed, you can install `copier` with the following command:
 
 ```bash
 pixi add copier
 ```
+
+We use pixi for development. If you would like to contribute to this repository or want to build your own template, we strongly recommend using Pixi.
 
 #### pipx
 
