@@ -53,11 +53,13 @@ We use pixi for development. If you would like to contribute to this repository 
 
 #### uv
 
-If you already have `uv` installed, you can install `copier` with the following command:
+If you prefer using [uv](https://docs.astral.sh/uv/#tool-management), you can install `copier` with the following command:
 
 ```bash
 uv tool install copier
 ```
+
+Note: If you use `poetry`, you might want to consider moving to `uv`.
 
 #### pipx
 
