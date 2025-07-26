@@ -1,8 +1,70 @@
 # Template for NREL's Python packages
 
-This is an opinionated template for creating Python packages at NREL.
+This is an opinionated template for creating Python packages at NREL
+intended for a wide range of users. If you are new to NREL or don't have
+much experience building Python packages, this template is a good option
+to provide you a scaffolding to get started quickly. It also setup several
+support tools such checks on your code, documentation generation, and
+running tests.
+If you're an experienced Python developer, you still have some control by
+answering a few questions during the initialization process, while avoiding
+a plain copy and paste from some of your other projects. We use this
+template ourselves.
 
 ## Quickstart
+
+### Install Copier
+
+This template is based on [Copier](https://copier.readthedocs.io), a tool to
+copy files and directories from a template repository to a destination
+directory, while allowing you to answer questions to customize the
+destination. You can install `copier` in several ways, depending on your
+environment and preferences. Here are some common methods, please choose one
+that suits you best:
+
+
+#### Homebrew (OSX)
+
+If you are on OSX and have [Homebrew](https://brew.sh/) installed, you can install `copier` with the following command:
+
+```bash
+brew install copier
+```
+
+#### Pixi
+
+If you have [Pixi](https://pixi.sh/latest/) installed, you can install `copier` with the following command:
+
+```bash
+pixi add copier
+```
+
+#### pipx
+
+If you have [pipx](https://pypa.github.io/pipx/) installed, you can install `copier` with the following command:
+
+```bash
+pipx install copier
+```
+
+#### uv
+
+If you already have `uv` installed, you can install `copier` with the following command:
+
+```bash
+uv tool install copier
+```
+
+#### Nix flake
+
+If you are using [Nix flakes](https://nixos.wiki/wiki/Flakes), you can install `copier` with the following command:
+
+```bash
+nix profile install 'https://flakehub.com/f/copier-org/copier/*.tar.gz'
+```
+
+
+
 
 - If you don't already have it, install [pixi](https://pixi.sh/latest/#installation)
 - Clone this repository
