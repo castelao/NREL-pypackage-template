@@ -1,6 +1,6 @@
 # Template for NREL's Python packages
 
-This is an opinionated template for creating Python packages at NREL
+This is an opinionated template for creating Python packages at NREL,
 intended for a wide range of users. If you are new to NREL or don't have
 much experience building Python packages, this template is a good option
 to provide you a scaffolding to get started quickly. It also setup several
@@ -13,7 +13,7 @@ template ourselves.
 
 ## Quickstart
 
-### Install Copier
+### 1) Install Copier
 
 This template is based on [Copier](https://copier.readthedocs.io), a tool to
 copy files and directories from a template repository to a destination
@@ -77,7 +77,7 @@ If you are using [Nix flakes](https://nixos.wiki/wiki/Flakes), you can install `
 nix profile install 'https://flakehub.com/f/copier-org/copier/*.tar.gz'
 ```
 
-
+### 2) Build your package
 
 
 - If you don't already have it, install [pixi](https://pixi.sh/latest/#installation)
