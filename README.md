@@ -34,11 +34,20 @@ brew install copier
 
 #### Pixi (contributors)
 
-If you have [Pixi](https://pixi.sh/latest/) installed, you can install `copier` with the following command:
+If you have [Pixi](https://pixi.sh/latest/) installed, you can:
 
-```bash
-pixi add copier
-```
+- Clone this repository and activate it's environment:
+  ```bash
+  git clone https://github.com/castelao/NREL-pypackage-template
+  cd NREL-pypackage-template
+  pixi shell
+  ```
+- Or create your own environment:
+  ```bash
+  pixi init my_project_creator
+  pixi add copier
+  pixi shell
+  ```
 
 We use pixi for development. If you would like to contribute to this repository or want to build your own template, we strongly recommend using Pixi.
 
