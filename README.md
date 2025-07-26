@@ -51,20 +51,20 @@ If you have [Pixi](https://pixi.sh/latest/) installed, you can:
 
 We use pixi for development. If you would like to contribute to this repository or want to build your own template, we strongly recommend using Pixi.
 
-#### pipx
-
-If you have [pipx](https://pypa.github.io/pipx/) installed, you can install `copier` with the following command:
-
-```bash
-pipx install copier
-```
-
 #### uv
 
 If you already have `uv` installed, you can install `copier` with the following command:
 
 ```bash
 uv tool install copier
+```
+
+#### pipx
+
+If you have [pipx](https://pypa.github.io/pipx/) installed, you can install `copier` with the following command:
+
+```bash
+pipx install copier
 ```
 
 #### Nix flake
