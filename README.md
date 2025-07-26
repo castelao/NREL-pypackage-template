@@ -34,14 +34,15 @@ brew install copier
 
 #### Pixi (contributors)
 
-If you have [Pixi](https://pixi.sh/latest/) installed, you can:
+Install [Pixi](https://pixi.sh/latest/#installation) and:
 
 - Clone this repository and activate it's environment:
   ```bash
-  git clone https://github.com/castelao/NREL-pypackage-template
+  git clone https://github.com/castelao/NREL-pypackage-template.git
   cd NREL-pypackage-template
   pixi shell
   ```
+
 - Or create your own environment:
   ```bash
   pixi init my_project_creator
@@ -79,24 +80,17 @@ nix profile install 'https://flakehub.com/f/copier-org/copier/*.tar.gz'
 
 ### 2) Build your package
 
+```bash
+copier copy https://github.com/castelao/NREL-pypackage-template ../my_new_project
+cd ../my_new_project
+```
 
-- If you don't already have it, install [pixi](https://pixi.sh/latest/#installation)
-- Clone this repository
-  ```bash
-  git clone https://github.com/castelao/NREL-pypackage-template.git
-  cd NREL-pypackage-template
-  ```
-- Create your new project by running
-  ```bash
-  pixi run copier copy https://github.com/castelao/NREL-pypackage-template ../my_new_project
-  cd ../my_new_project
-  ```
-  You should see several files and directories created from the information
-  that you gave. For instance, take a look at the `pyproject.toml` file.
-- Your package will probably depend on other libraries. Let's assume that
-  you'll use `xarray`, so you can run
-  ```bash
-  pixi add xarray
-  ```
-  Which will update the `pyproject.toml` and `pixi.lock` files with the new
-  dependency.
+You should see several files and directories created from the information
+that you gave. For instance, take a look at the `pyproject.toml` file.
+Your package will probably depend on other libraries. Let's assume that
+you'll use `xarray`, so you can run
+```bash
+pixi add xarray
+```
+Which will update the `pyproject.toml` and `pixi.lock` files with the new
+dependency.
