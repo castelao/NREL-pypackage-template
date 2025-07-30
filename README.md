@@ -92,5 +92,5 @@ you'll use `xarray`, so you can run
 ```bash
 pixi add xarray
 ```
-Which will update the `pyproject.toml` and `pixi.lock` files with the new
+which will update the `pyproject.toml` and `pixi.lock` files with the new
 dependency.
