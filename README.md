@@ -7,8 +7,8 @@ to provide you a scaffolding to get started quickly. It also sets up several
 support tools for you, such as automated checks on your code, automatic 
 documentation generation, and tests validation on every pull request.
 If you're an experienced Python developer, you still have some control by
-answering a few questions during the initialization process, while avoiding
-a plain copy and paste from some of your other projects. We use this
+answering a few questions during the initialization process, which helps avoid
+a plain copy and paste from your other projects. We use this
 template ourselves.
 
 ## Quickstart
