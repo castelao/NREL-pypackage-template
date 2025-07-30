@@ -3,9 +3,9 @@
 This is an opinionated template for creating Python packages at NREL,
 intended for a wide range of users. If you are new to NREL or don't have
 much experience building Python packages, this template is a good option
-to provide you a scaffolding to get started quickly. It also setup several
-support tools such checks on your code, documentation generation, and
-running tests.
+to provide you a scaffolding to get started quickly. It also sets up several
+support tools for you, such as automated checks on your code, automatic 
+documentation generation, and tests validation on every pull request.
 If you're an experienced Python developer, you still have some control by
 answering a few questions during the initialization process, while avoiding
 a plain copy and paste from some of your other projects. We use this
