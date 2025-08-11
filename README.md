@@ -88,7 +88,7 @@ cd ../my_new_project
 You should see several files and directories created from the information
 that you gave. For instance, take a look at the `pyproject.toml` file.
 Your package will probably depend on other libraries. Let's assume that
-you'll use `xarray`, so you can run
+you'll use `xarray`. If you use `pixi` you can run
 ```bash
 pixi add xarray
 ```
