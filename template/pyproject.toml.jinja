@@ -26,7 +26,8 @@ classifiers=[
   "Natural Language :: English",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.11",
+  {% if requires_python <= "3.11" %}"Programming Language :: Python :: 3.11",
+  {% endif %}
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Topic :: Software Development :: Libraries :: Application Frameworks",
@@ -153,7 +154,6 @@ test = { features = ["test"], solve-group = "default" }
 tests = "pytest --durations=20 tests"
 
 [tool.pixi.dependencies]
-python = ">=3.11.8,<3.12"
 matplotlib = ">=3.9.2,<4"
 numpy = ">=2.1.2,<3"
 pandas = ">=2.2.3,<3"
