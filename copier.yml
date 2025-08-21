@@ -1,5 +1,4 @@
 # questions
-_exclude:
 _subdirectory: template
 project_title:
     type: str
