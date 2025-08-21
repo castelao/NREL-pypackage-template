@@ -1,6 +1,5 @@
 # questions
 _exclude:
-    - README.md
 _subdirectory: template
 project_title:
     type: str
