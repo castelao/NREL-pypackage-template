@@ -40,6 +40,10 @@ repository:
     type: str
     default: "https://github.com/NREL/{{ project_name }}"
     help: What is the repository URL?
+github_username:
+    type: str
+    placeholder: "@castelao"
+    help: What is your GitHub username?
 version:
     type: str
     default: "0.1.0"
