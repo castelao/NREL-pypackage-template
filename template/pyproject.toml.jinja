@@ -66,6 +66,30 @@ homepage = "{{ repository }}"
 documentation = "{{ repository }}"
 repository = "{{ repository }}"
 
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_also = [
+]
+
+omit = [
+    # omit test files
+    "tests/*",
+    # omit init files
+    "__init__.py",
+    # omit version file
+    "_version.py",
+    # omit pixi files
+    ".pixi/*",
+]
+
+[tool.pytest.ini_options]
+addopts = "--cov={{ project_slug }} --cov-report=html --cov-report=xml:coverage.xml --disable-warnings --cov-fail-under=90"
+testpaths = [
+    "tests",
+]
 [tool.ruff]
 line-length = 79
 
