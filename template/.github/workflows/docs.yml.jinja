@@ -13,8 +13,9 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
-      - name: Install LaTeX
-        run: "sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
+      # Install Latex if building PDF docs
+      # - name: Install LaTeX
+      #   run: "sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-xetex"
 
       - uses: actions/checkout@v4
         with:
