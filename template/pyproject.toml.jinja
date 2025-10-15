@@ -176,6 +176,9 @@ test = { features = ["test"], solve-group = "default" }
 [tool.pixi.feature.dev.tasks]
 tests = "pytest --durations=20 tests"
 
+[tool.pixi.feature.doc.tasks]
+python-docs = { cmd = "make html", cwd = "docs" }
+
 [tool.pixi.dependencies]
 matplotlib = ">=3.9.2,<4"
 numpy = ">=2.1.2,<3"
