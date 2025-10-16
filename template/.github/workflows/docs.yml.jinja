@@ -17,7 +17,8 @@ jobs:
       # - name: Install LaTeX
       #   run: "sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-xetex"
 
-      - uses: actions/checkout@v5
+      - name: Checkout code
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           fetch-tags: true
