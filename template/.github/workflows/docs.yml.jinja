@@ -28,7 +28,7 @@ jobs:
         with:
           pixi-version: v0.50.1
           cache: true
-          cache-write: ${{ github.ref == 'refs/heads/main' }}
+          cache-write: {% raw %} ${{ github.ref == 'refs/heads/main' }} {% endraw %}
           frozen: true
           environments: docs
 
