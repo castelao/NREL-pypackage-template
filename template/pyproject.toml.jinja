@@ -158,6 +158,9 @@ max-positional-args = 10
 packages = ["{{ project_slug }}"]
 
 [tool.setuptools_scm]
+fallback_version = "9999"
+# This spec below forces setuptools_scm to look strictly for vX.X.X tags
+git_describe_command = [ "git", "describe", "--dirty", "--tags", "--long", "--match", "v*[0-9]*" ]
 version_file = "{{ project_slug }}/_version.py"
 
 [tool.pixi.project]
