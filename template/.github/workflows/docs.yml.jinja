@@ -34,7 +34,7 @@ jobs:
 
       - name: Build HTML
         # Turn warning into errors
-        run: SPHINXOPTS="-W --keep-going -n" pixi run -e docs python-docs
+        run: SPHINXOPTS="-W --keep-going -n" pixi run -e doc python-docs
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
