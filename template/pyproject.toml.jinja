@@ -176,6 +176,9 @@ test = { features = ["test"], solve-group = "default" }
 [tool.pixi.feature.dev.tasks]
 tests = "pytest --durations=20 tests"
 
+[tool.pixi.feature.doc.tasks]
+python-docs = { cmd = "make html", cwd = "docs" }
+
 [tool.pixi.dependencies]
 matplotlib = ">=3.9.2,<4"
 numpy = ">=2.1.2,<3"
@@ -196,5 +199,12 @@ pytest-xdist = ">=3.0"
 tox = ">=4.21.2,<5"
 
 [tool.pixi.feature.doc.dependencies]
+# furo = ">=2024.8.6,<2025"
+make = ">=4.4.1,<5"
+myst-parser = ">=4.0.0,<5"
+# nbconvert = ">=7.16.6,<8"
+# pandoc = ">=3.6.4,<4"
 sphinx = ">=7.0"
+# sphinx-inline-tabs = ">=2023.4.21,<2024"
 sphinx_rtd_theme = ">=2.0"
+# sphinxcontrib-mermaid = ">=1.0.0,<2"

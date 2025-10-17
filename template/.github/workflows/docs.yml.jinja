@@ -1,4 +1,4 @@
-name: Release Documentation
+name: Python Documentation
 
 permissions: write-all
 
@@ -13,28 +13,51 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
-      - name: Install LaTeX
-        run: "sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
+      # Install Latex if building PDF docs
+      # - name: Install LaTeX
+      #   run: "sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-xetex"
 
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           fetch-tags: true
 
-      - uses: actions/setup-python@v5
+      - name: Set Pixi to manage environments
+        uses: prefix-dev/setup-pixi@v0.9.1
         with:
-          python-version: '{{ requires_python }}'
-          cache: 'pip' # caching pip dependencies
-      - name: Install
-        run: python3 -m pip install '.[doc]'
+          pixi-version: v0.50.1
+          cache: true
+          cache-write: ${{ github.ref == 'refs/heads/main' }}
+          frozen: true
+          environments: docs
 
-      - name: Build document
-        run: |
-          cd docs
-          make latexpdf
+      - name: Build HTML
+        # Turn warning into errors
+        run: SPHINXOPTS="-W --keep-going -n" pixi run -e doc python-docs
 
-      - name: Release
-        uses: fnkr/github-action-ghr@v1
-        env:
-          GHR_PATH: docs/_build/latex/MyPackage.pdf
-          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: 'docs/_build/html'
+
+      # Only deploy full versions, not dev releases
+      - name: Deploy to GitHub Pages
+        if: startsWith(github.ref, 'refs/tags/v')
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # Support for PDF docs
+      # - name: Build document
+      #   run: |
+      #     cd docs
+      #     make latexpdf
+
+      # - name: Release
+      #   uses: fnkr/github-action-ghr@v1
+      #   env:
+      #     GHR_PATH: docs/_build/latex/MyPackage.pdf
+      #     GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
