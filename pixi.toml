@@ -1,4 +1,4 @@
-[project]
+[workspace]
 authors = [
   "Gui Castelao <guilherme@castelao.net>",
   "Paul Pinchuk <ppinchuk@nrel.gov>",
