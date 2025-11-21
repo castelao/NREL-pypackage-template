@@ -68,6 +68,9 @@ test = [
   "tox>=4.32.0,<5",
 ]
 
+[project.scripts]
+{{ project_slug }} = "{{ project_slug }}.cli:main"
+
 [project.urls]
 homepage = "{{ repository }}"
 documentation = "{{ repository }}"
