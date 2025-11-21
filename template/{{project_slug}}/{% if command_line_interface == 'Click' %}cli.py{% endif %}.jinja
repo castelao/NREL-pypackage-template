@@ -1,20 +1,29 @@
-"""Console script for {{ project_slug }}."""
+"""Console script for {{ project_name }}"""
 
 import click
+from rich.console import Console
 
 import {{ project_slug }}
 
+console = Console()
+
+
 @click.command()
-@click.option('--count', default=1, help='Number of greetings.')
-@click.option('--name', prompt='Your name',
-              help='The person to greet.')
-def hello(count, name):
-    """Simple program that greets NAME for a total of COUNT times."""
-   click.eco("Replace this message by putting your code into "
-             "{{ project_slug }}.cli.main")
+@click.version_option(version={{ project_slug }}.__version__)
+@click.pass_context
+def main(ctx):
+    """{{ project_name }} command line interface"""
+    ctx.ensure_object(dict)
+    console.print("Hello from {{ project_name }}!")
+    console.print(
+        "Replace this message by putting your code into "
+        "{{ project_slug }}.cli.main"
+    )
+    console.print(
+        "See Click documentation at "
+        "https://click.palletsprojects.com/en/stable/"
+    )
 
-    for x in range(count):
-        click.echo(f"Hello {name}!")
 
-if __name__ == '__main__':
-    hello()
+if __name__ == "__main__":
+    main(obj={})
