@@ -86,14 +86,7 @@ cd ../my_new_project
 ```
 
 You should see several files and directories created from the information
-that you gave. For instance, take a look at the `pyproject.toml` file.
-Your package will probably depend on other libraries. Let's assume that
-you'll use `xarray`, so you can run
-```bash
-pixi add xarray
-```
-which will update the `pyproject.toml` and `pixi.lock` files with the new
-dependency.
+that you gave.
 
 If you've made changes to the template repository and would like to test them out locally,
 you can do so by adding `--vcs-ref HEAD` to the `copy` command:
@@ -102,3 +95,24 @@ you can do so by adding `--vcs-ref HEAD` to the `copy` command:
 copier copy --vcs-ref HEAD ./NREL-pypackage-template ../my_new_project
 cd ../my_new_project
 ```
+
+### 3) Test your build
+Once your project structure has been built, you can make sure everything works as intended
+by running the tests:
+
+```bash
+pixi r tests
+```
+
+If this command succeeds, your repository has successfully been set up from the template.
+
+### 4) Add more dependencies
+Now you are ready to continue to customize your repository!
+For instance, take a look at the `pyproject.toml` file.
+Your package will probably depend on other libraries. Let's assume that
+you'll use `xarray`, so you can run
+```bash
+pixi add xarray
+```
+which will update the `pyproject.toml` and `pixi.lock` files with the new
+dependency.
