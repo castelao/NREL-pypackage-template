@@ -6,7 +6,7 @@ from rich.console import Console
 import {{ project_slug }}
 
 console = Console()
-{% if command_line_interface == "Typer" %}app = typer.Typer(version_option=True)
+{% if command_line_interface == "Typer" %}app = typer.Typer()
 
 @app.command()
 def main():
