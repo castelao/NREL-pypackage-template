@@ -4,7 +4,7 @@ This is an opinionated template for creating Python packages at NREL,
 intended for a wide range of users. If you are new to NREL or don't have
 much experience building Python packages, this template is a good option
 to provide you a scaffolding to get started quickly. It also sets up several
-support tools for you, such as automated checks on your code, automatic 
+support tools for you, such as automated checks on your code, automatic
 documentation generation, and tests validation on every pull request.
 If you're an experienced Python developer, you still have some control by
 answering a few questions during the initialization process, which helps avoid
@@ -94,3 +94,11 @@ pixi add xarray
 ```
 which will update the `pyproject.toml` and `pixi.lock` files with the new
 dependency.
+
+If you've made changes to the template repository and would like to test them out locally,
+you can do so by adding `--vcs-ref HEAD` to the `copy` command:
+
+```bash
+copier copy --vcs-ref HEAD ./NREL-pypackage-template ../my_new_project
+cd ../my_new_project
+```
