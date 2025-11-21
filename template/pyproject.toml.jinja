@@ -200,7 +200,7 @@ fallback_version = "9999"
 git_describe_command = [ "git", "describe", "--dirty", "--tags", "--long", "--match", "v*[0-9]*" ]
 version_file = "{{ project_slug }}/_version.py"
 
-[tool.pixi.project]
+[tool.pixi.workspace]
 channels = ["conda-forge"]
 platforms = ["osx-arm64", "linux-64", "linux-aarch64", "win-64"]
 
