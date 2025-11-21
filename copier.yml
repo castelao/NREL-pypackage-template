@@ -48,10 +48,10 @@ version:
     type: str
     default: "0.1.0"
     help: What is your package version?
-use_pytest:
-    type: bool
-    default: true
-    help: Do you want to use pytest for testing?
+# use_pytest:
+#     type: bool
+#     default: true
+#     help: Do you want to use pytest for testing?
 requires_python:
     type: str
     choices:
