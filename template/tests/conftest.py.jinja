@@ -3,9 +3,10 @@
 from pathlib import Path
 
 import pytest
-
-
-# LOGGING_META_FILES = {"exceptions.py", "warnings.py", "logger.py"}
+{% if command_line_interface == "Click" %}from click.testing import CliRunner
+{% elif command_line_interface == "Typer" %}from typer.testing import CliRunner
+{% endif %}
+LOGGING_META_FILES = {"exceptions.py", "warn.py"}
 
 
 @pytest.fixture
@@ -27,7 +28,7 @@ def assert_message_was_logged(caplog):
         # record guaranteed to be defined b/c of "assert caplog.records"
         if log_level:
             assert record.levelname == log_level
-        # assert record.filename not in LOGGING_META_FILES
+        assert record.filename not in LOGGING_META_FILES
         assert record.funcName != "__init__"
         assert "{{ project_slug }}" in record.name
 
@@ -47,3 +48,9 @@ def test_dir():
 def test_data_dir(test_dir):
     """Directory containing test data"""
     return test_dir / "data"
+
+
+@pytest.fixture
+def cli_runner():
+    """Return a `CliRunner` for testing commands"""
+    return CliRunner()
