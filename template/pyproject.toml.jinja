@@ -225,7 +225,7 @@ check-wheels = { cmd = ["twine", "check", "dist/*"], depends-on = ["build-wheels
 upload-wheels = { cmd = ["twine", "upload", "dist/*"], depends-on = ["check-wheels"] }
 
 [tool.pixi.dependencies]
-rich>=14.2.0,<15
+rich = ">=14.2.0,<15"
 
 [tool.pixi.pypi-dependencies]
 {{ project_slug }} = { path = ".", editable = true }
