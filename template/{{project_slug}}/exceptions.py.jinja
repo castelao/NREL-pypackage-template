@@ -1,0 +1,26 @@
+"""Custom Exceptions and Errors for {{ project_name }}"""
+
+import logging
+
+
+logger = logging.getLogger("{{ project_slug }}")
+
+
+class {{ project_slug | upper }}Error(Exception):
+    """Generic {{ project_name }} Error"""
+
+    def __init__(self, *args, **kwargs):
+        """Init exception and broadcast message to logger"""
+        super().__init__(*args, **kwargs)
+        if args:
+            logger.error(
+                "<%s> %s", self.__class__.__name__, args[0], stacklevel=2
+            )
+
+
+class {{ project_slug | upper }}ValueError({{ project_slug | upper }}Error, ValueError):
+    """{{ project_name }} ValueError"""
+
+
+class {{ project_slug | upper }}RuntimeError({{ project_slug | upper }}Error, RuntimeError):
+    """{{ project_name }} RuntimeError"""
