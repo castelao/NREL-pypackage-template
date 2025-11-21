@@ -23,11 +23,11 @@ package_short_description:
 author_first_name:
     type: str
     placeholder: "Guilherme"
-    help: What is the author's given name?
+    help: What is your given (first) name?
 author_family_name:
     type: str
     placeholder: "Castelão"
-    help: What is your family name?
+    help: What is your family (last) name?
 email:
     type: str
     placeholder: "gpimenta@nrel.gov"
@@ -44,10 +44,10 @@ github_username:
     type: str
     placeholder: "@castelao"
     help: What is your GitHub username?
-version:
-    type: str
-    default: "0.1.0"
-    help: What is your package version?
+# version:
+#     type: str
+#     default: "0.1.0"
+#     help: What is your package version?
 # use_pytest:
 #     type: bool
 #     default: true
@@ -68,8 +68,8 @@ command_line_interface:
     choices:
         - Click
         - Typer
-        - Argparse
-        - No command-line interface
+        # - Argparse
+        # - No command-line interface
     help: Which command line interface do you want to use?
 project_license:
     type: str
