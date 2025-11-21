@@ -11,7 +11,7 @@ project_name:
 project_slug:
     type: str
     default: "{{ project_name | lower | replace(' ', '-') | regex_replace('[-]+', '_') }}"
-    help: What is your module/library name, i.e. how it will be imported inside Python? For instance, if the package name was NREL-reVRt, you might want to use `revrt` here, so that inside Python it would be `import revrt`. Use only lower-case, no hyphens, no spaces, and no special characters.
+    help: What is your module/library name, i.e. how it will be imported inside Python? For instance, if the package name was NREL-reVRt, you might want to use `revrt` here, so that inside Python it would be `import revrt`. Use only lower-case, no hyphens, no spaces, and no special characters. Prefer a single word.
     # validator: >-
     #     {% if not (project_name | regex_search('^[a-z][a-z0-9\-]+$')) %}
     #     project_name must start with a letter, followed one or more letters, digits or dashes all lowercase.
