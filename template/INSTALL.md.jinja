@@ -14,9 +14,77 @@ Some options are:
 
 ### Installing with PIP
 
+`{{ project_name }}` targets Python {{ requires_python }} or newer.
+Before installing, ensure the package requirements below are met and
+then choose the environment manager that best fits your workflow.
+
+#### Using `virtualenv`
+
+1. Install `virtualenv` if needed:
+   `python3 -m pip install --user virtualenv`.
+2. Create a new environment and activate it:
+   ```bash
+   python3 -m venv .venv-{{ project_slug }}
+   source .venv-{{ project_slug }}/bin/activate
+   ```
+3. Upgrade pip inside the environment:
+   `python -m pip install --upgrade pip`.
+4. Install `{{ project_name }}` directly from the repository:
+   ```bash
+   python -m pip install "git+{{ repository }}"
+   ```
+   If you already cloned the repository locally, run
+   `python -m pip install .` from the project root instead.
+
+#### Using Conda or Mamba
+
+1. Create a dedicated environment (replace `mamba` with `conda` if you
+   prefer):
+   ```bash
+   mamba create -n {{ project_slug }} python=3.12
+   mamba activate {{ project_slug }}
+   ```
+2. Update pip inside the activated environment:
+   `python -m pip install --upgrade pip`.
+3. Install `{{ project_name }}` from the repository, either remotely or
+   from a local checkout:
+   ```bash
+   python -m pip install "git+{{ repository }}"
+   # or, inside the cloned repo
+   python -m pip install .
+   ```
+
+After installation you can verify everything is available by running
+`{{ project_slug }} --help`.
+
 ### Installing from released Wheels
 
-Download from {{ repository }}/releases
+Start by downloading the wheels from
+[the latest {{ project_name }} release]({{ repository }}/releases).
+Once you have the correct wheel file, install it using pip:
+
+#### Using `virtualenv`
+
+1. Create and activate the environment as shown in
+   [Installing with PIP](#installing-with-pip).
+2. With the environment active, install the downloaded wheel (replace the
+   filename with the one you fetched):
+   ```bash
+   python -m pip install /path/to/{{ project_name }}-<version>-py3-none-any.whl
+   ```
+
+#### Using Conda or Mamba
+
+1. Create and activate the environment as shown in
+   [Using Conda or Mamba](#using-conda-or-mamba).
+2. Install the wheel inside the activated environment:
+   ```bash
+   python -m pip install /path/to/{{ project_name }}-<version>-py3-none-any.whl
+   ```
+
+You can verify the installation by running `{{ project_slug }} --help` in the
+active environment.
+
 
 ### Installing with Pixi (recommended)
 
