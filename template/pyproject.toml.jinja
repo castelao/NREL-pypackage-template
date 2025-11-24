@@ -40,7 +40,6 @@ dependencies = [
 dev = [
   "ipython>=8.29.0,<9",
   {% if use_pre_commit %}"pre-commit>=4.0.1,<5",{% endif %}
-  "jupyter>=1.1.1,<2",
 ]
 doc = [
   "ghp-import>=2.1.0,<3",
@@ -232,7 +231,6 @@ upload-wheels = { cmd = ["twine", "upload", "dist/*"], depends-on = ["check-whee
 [tool.pixi.feature.dev.dependencies]
 ipython = ">=8.29.0,<9"
 {% if use_pre_commit %}pre-commit = ">=4.0.1,<5"{% endif %}
-jupyter = ">=1.1.1,<2"
 ruff = ">=0.14.5,<0.15"
 
 [tool.pixi.feature.test.dependencies]

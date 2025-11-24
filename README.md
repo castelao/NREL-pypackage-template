@@ -116,3 +116,13 @@ pixi add xarray
 ```
 which will update the `pyproject.toml` and `pixi.lock` files with the new
 dependency.
+
+If you want to add more tools for development that do not impact the library dependencies,
+you can set the feature flag like this:
+
+```bash
+pixi add --feature dev jupyter
+```
+
+This will add ``jupyter`` as a package that is available for anyone working in the ``dev``
+environment without requiring it as a dependency for all installs of your package.
