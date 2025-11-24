@@ -32,7 +32,7 @@ classifiers=[
 ]
 dependencies = [
   {% if command_line_interface == "Click" %}"click>=8.0.0",{% elif command_line_interface == "Typer" %}"typer>=0.12",{% endif %}
-  "rich>=14.2.0,<15",
+  {% if command_line_interface != "No command-line interface" %}"rich>=14.2.0,<15",{% endif %}
 ]
 
 [project.optional-dependencies]
@@ -223,7 +223,7 @@ check-wheels = { cmd = ["twine", "check", "dist/*"], depends-on = ["build-wheels
 upload-wheels = { cmd = ["twine", "upload", "dist/*"], depends-on = ["check-wheels"] }
 
 [tool.pixi.dependencies]
-rich = ">=14.2.0,<15"
+{% if command_line_interface != "No command-line interface" %}rich = ">=14.2.0,<15"{% endif %}
 
 [tool.pixi.pypi-dependencies]
 {{ project_slug }} = { path = ".", editable = true }
