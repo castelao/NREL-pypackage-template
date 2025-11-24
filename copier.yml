@@ -56,6 +56,7 @@ requires_python:
         - "3.11"
         - "3.12"
         - "3.13"
+        - "3.14"
     default: "3.12"
     help: What is the minimum Python version required?
 command_line_interface:
