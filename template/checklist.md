@@ -21,3 +21,9 @@ Once you walk through it, you can delete it.
 - [ ] Advanced Security -> Access to alerts -> Add your admin team
 - [ ] Advanced Security -> Remember to save modifications (Save changes)
 - [ ] Rules -> Rulesets -> New ruleset
+
+## Codecov
+If your repository is public, set up CodeCov to run with GutHub actions
+by using [this guide](https://docs.codecov.com/docs/quick-start). If your
+repository is _not_ public, consider removing the CodeCov github action
+from ``/github/workflows``.
