@@ -44,10 +44,6 @@ github_username:
     type: str
     placeholder: "@castelao"
     help: What is your GitHub username?
-# use_pytest:
-#     type: bool
-#     default: true
-#     help: Do you want to use pytest for testing?
 requires_python:
     type: str
     choices:
