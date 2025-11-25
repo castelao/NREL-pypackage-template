@@ -1,0 +1,17 @@
+"""Custom Warnings for {{ project_name }}"""
+
+import logging
+
+logger = logging.getLogger("{{ project_slug }}")
+
+
+class {{ project_slug | upper }}Warning(UserWarning):
+    """Generic {{ project_name }} Warning"""
+
+    def __init__(self, *args, **kwargs):
+        """Init warning and broadcast message to logger"""
+        super().__init__(*args, **kwargs)
+        if args:
+            logger.warning(
+                "<%s> %s", self.__class__.__name__, args[0], stacklevel=2
+            )

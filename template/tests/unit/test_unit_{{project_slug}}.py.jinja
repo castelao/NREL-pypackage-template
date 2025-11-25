@@ -1,16 +1,18 @@
-#!/usr/bin/env python
+"""Unit tests for `{{ project_slug }}` package
 
-"""Tests for `pypackage_template` package."""
+Unit tests should test individual functions and methods to ensure they
+work as expected. These tests are typically fast to run and should not
+require any external resources.
+"""
 
 import pytest
 
-
-from mypypackage import mypypackage
+import {{ project_slug }}
 
 
 @pytest.fixture
 def response():
-    """Sample pytest fixture.
+    """Sample pytest fixture
 
     See more at: http://doc.pytest.org/en/latest/fixture.html
     """
@@ -19,6 +21,6 @@ def response():
 
 
 def test_content(response):
-    """Sample pytest test function with the pytest fixture as an argument."""
+    """Sample pytest unit test with the pytest fixture as an argument"""
     # from bs4 import BeautifulSoup
     # assert 'GitHub' in BeautifulSoup(response.content).title.string

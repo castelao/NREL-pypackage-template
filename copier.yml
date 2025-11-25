@@ -11,7 +11,7 @@ project_name:
 project_slug:
     type: str
     default: "{{ project_name | lower | replace(' ', '-') | regex_replace('[-]+', '_') }}"
-    help: What is your module/library name, i.e. how it will be imported inside Python? For instance, if the package name was NREL-reVRt, you might want to use `revrt` here, so that inside Python it would be `import revrt`. Use only lower-case, no hyphens, no spaces, and no special characters.
+    help: What is your module/library name, i.e. how it will be imported inside Python? For instance, if the package name was NREL-reVRt, you might want to use `revrt` here, so that inside Python it would be `import revrt`. Use only lower-case, no hyphens, no spaces, and no special characters. Prefer a single word.
     # validator: >-
     #     {% if not (project_name | regex_search('^[a-z][a-z0-9\-]+$')) %}
     #     project_name must start with a letter, followed one or more letters, digits or dashes all lowercase.
@@ -23,11 +23,11 @@ package_short_description:
 author_first_name:
     type: str
     placeholder: "Guilherme"
-    help: What is the author's given name?
+    help: What is your given (first) name?
 author_family_name:
     type: str
     placeholder: "Castelão"
-    help: What is your family name?
+    help: What is your family (last) name?
 email:
     type: str
     placeholder: "gpimenta@nrel.gov"
@@ -44,14 +44,6 @@ github_username:
     type: str
     placeholder: "@castelao"
     help: What is your GitHub username?
-version:
-    type: str
-    default: "0.1.0"
-    help: What is your package version?
-use_pytest:
-    type: bool
-    default: true
-    help: Do you want to use pytest for testing?
 requires_python:
     type: str
     choices:
@@ -60,6 +52,7 @@ requires_python:
         - "3.11"
         - "3.12"
         - "3.13"
+        - "3.14"
     default: "3.12"
     help: What is the minimum Python version required?
 command_line_interface:
@@ -68,8 +61,8 @@ command_line_interface:
     choices:
         - Click
         - Typer
-        - Argparse
-        - No command-line interface
+        # - Argparse
+        # - No command-line interface
     help: Which command line interface do you want to use?
 project_license:
     type: str
@@ -86,3 +79,7 @@ use_pre_commit:
     type: bool
     default: true
     help: Do you want to use pre-commit for code formatting and linting?
+include_checklist
+    type: bool
+    default: true
+    help: Do you want to include a checklist file to help guide you to finish setting up the repository?

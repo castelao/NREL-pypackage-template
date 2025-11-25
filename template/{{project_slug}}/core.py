@@ -1,1 +1,1 @@
-"""Main module."""
+"""Main module"""

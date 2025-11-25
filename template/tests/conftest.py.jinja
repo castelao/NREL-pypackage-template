@@ -1,0 +1,56 @@
+"""Fixtures for use across all tests"""
+
+from pathlib import Path
+
+import pytest
+{% if command_line_interface == "Click" %}from click.testing import CliRunner
+{% elif command_line_interface == "Typer" %}from typer.testing import CliRunner
+{% endif %}
+LOGGING_META_FILES = {"exceptions.py", "warn.py"}
+
+
+@pytest.fixture
+def assert_message_was_logged(caplog):
+    """Assert that a particular (partial) message was logged"""
+    caplog.clear()
+
+    def assert_message(msg, log_level=None, clear_records=False):
+        """Assert that a message was logged"""
+        assert caplog.records
+
+        for record in caplog.records:
+            if msg in record.message:
+                break
+        else:
+            err = f"{msg!r} not found in log records"
+            raise AssertionError(err)
+
+        # record guaranteed to be defined b/c of "assert caplog.records"
+        if log_level:
+            assert record.levelname == log_level
+        assert record.filename not in LOGGING_META_FILES
+        assert record.funcName != "__init__"
+        assert "{{ project_slug }}" in record.name
+
+        if clear_records:
+            caplog.clear()
+
+    return assert_message
+
+
+@pytest.fixture(scope="session")
+def test_dir():
+    """Directory containing test files"""
+    return Path(__file__).parent
+
+
+@pytest.fixture(scope="session")
+def test_data_dir(test_dir):
+    """Directory containing test data"""
+    return test_dir / "data"
+
+
+@pytest.fixture
+def cli_runner():
+    """Return a `CliRunner` for testing commands"""
+    return CliRunner()

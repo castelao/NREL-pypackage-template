@@ -1,5 +1,34 @@
 # {{ project_title }}
 
+[![PythonV](https://badge.fury.io/py/{{ project_name }}.svg)](https://pypi.org/project/{{ project_name }})
+[![PyPi](https://img.shields.io/pypi/pyversions/{{ project_name }}.svg)](https://pypi.org/project/{{ project_name }})
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Pixi](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/prefix-dev/pixi/main/assets/badge/v0.json)](https://pixi.sh)
+
+
 {{ package_short_description }}
 
+
+## Installing {{ project_name }}
+The quickest way to install {{ project_name }} for users is from PyPi:
+
+```bash
+pip install {{ project_slug }}
+```
+
+If you would like to install and run {{ project_name }} from source, we recommend using [pixi](https://pixi.sh/latest/):
+
+
+```bash
+git clone {{ repository }}.git; cd {{ project_name }}
+pixi run {{ project_slug }}
+```
+
+For detailed instructions, see the installation documentation.
+
 ## Quick start
+
+
+## Development
+Please see the Development Guidelines if you wish to contribute code
+to this repository.
