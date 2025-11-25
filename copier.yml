@@ -42,7 +42,7 @@ repository:
     help: What is the repository URL?
 github_username:
     type: str
-    placeholder: "@castelao"
+    placeholder: "castelao"
     help: What is your GitHub username?
 requires_python:
     type: str
