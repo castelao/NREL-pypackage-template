@@ -25,8 +25,8 @@ pixi install --frozen -e dev
 pixi shell -e dev
 
 # Linting and formatting
-pixi run -e dev ruff check .
-pixi run -e dev ruff format .
+pixi run -e dev lint
+pixi run -e dev format
 
 # Run tests
 pixi run -e test pytest
