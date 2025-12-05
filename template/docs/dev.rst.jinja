@@ -125,13 +125,13 @@ You can run python {{ project_name }} tests locally using ``pixi``:
 
 .. code-block:: shell
 
-    pixi r -e test tests
+    pixi run -e test tests
 
 To speed up testing, the tests can be run in parallel using ``-n auto``:
 
 .. code-block:: shell
 
-    pixi r -e test tests -n auto
+    pixi run -e test tests -n auto
 
 Tests for a module should ideally cover all code in that module,
 i.e., statement coverage should be at 100%, though this alone does not ensure that
@@ -194,7 +194,7 @@ To check your docstring additions/updates, you can build a local version of the 
 
 .. code-block:: shell
 
-    pixi r -e doc python-docs
+    pixi run -e doc python-docs
 
 After running this command, simply open ``docs/_build/html/index.html`` using your favorite browser, e.g.:
 

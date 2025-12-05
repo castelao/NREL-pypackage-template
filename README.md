@@ -101,7 +101,7 @@ Once your project structure has been built, you can make sure everything works a
 by running the tests:
 
 ```bash
-pixi r tests
+pixi run tests
 ```
 
 If this command succeeds, your repository has successfully been set up from the template.
