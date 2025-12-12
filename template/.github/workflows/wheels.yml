@@ -27,10 +27,7 @@ jobs:
           environments: dev
 
       - name: Build and publish to PyPi
-        env:
-            TWINE_USERNAME: __token__
-            TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
-        run: pixi run -e dev upload-wheels
+        run: pixi run -e dev publish-pypi
 
       # if it matches a Python release tag, upload to github releases
       - name: Release
